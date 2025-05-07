@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Android Dev Portfolio</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Splash Screen -->
+  <div id="splash" class="splash">
+    <div class="splash-content">
+      <span>Hello, my name is</span>
+      <h1 id="splash-username">[Username]</h1>
+    </div>
+  </div>
+
+  <!-- Android Phone UI Container -->
+  <div class="phone-frame" id="phone-frame">
+    <!-- Top App Bar -->
+    <header class="app-bar" id="app-bar">
+      <span id="app-bar-title">[Username]</span>
+      <button id="theme-toggle" aria-label="Toggle dark/light mode">🌙</button>
+    </header>
+
+    <!-- Main Content (App Screens) -->
+    <main class="app-content" id="app-content">
+      <!-- Home Screen -->
+      <section class="screen home-screen" id="home-screen">
+        <img src="WhatsApp Image 2025-04-17 at 16.36.20_76648955.jpg" alt="Profile Picture" class="profile-pic">
+        <h2>Hi, I'm [Username]</h2>
+        <p class="animated-text">I build Android apps.</p>
+        <div class="achievements">
+          <h3>Achievements & Awards</h3>
+          <ul>
+            <li><strong>Mobile App Designing</strong> - 1st place at GNA University, 2025</li>
+            <li><strong>Project Display</strong> - 1st prize in Punjab inter-poly TechFest (2025)</li>
+            <li><strong>Project Display</strong> - 1st prize in Lyalpur Khalsa College (2025)</li>
+            <li><strong>Participations in Hackathon</strong> - GNA Hackathon 3.0 (28-29 March / 2025)</li>
+            <li><strong>Participations in Hackathon</strong> - Code Crafter 2.0 (10-11 April / 2025)</li>
+          </ul>
+        </div>
+      </section>
+      <!-- Projects Screen -->
+      <section class="screen projects-screen" id="projects-screen" hidden>
+        <h2>Projects</h2>
+        <div class="projects-list">
+          <!-- Project cards will be injected here -->
+        </div>
+      </section>
+      <!-- Skills Screen -->
+      <section class="screen skills-screen" id="skills-screen" hidden>
+        <h2>Skills</h2>
+        <div class="skills-grid">
+          <!-- Skill chips/icons will be injected here -->
+        </div>
+      </section>
+      <!-- Gallery Screen -->
+      <!-- Contact Screen -->
+      <section class="screen contact-screen" id="contact-screen" hidden>
+        <h2>Contact</h2>
+        <div class="contact-icons">
+          <!-- Social icons and email button will be injected here -->
+        </div>
+      </section>
+    </main>
+
+    <!-- Bottom Navigation (like Android nav bar) -->
+    <nav class="bottom-nav" id="bottom-nav">
+      <button data-screen="home-screen" class="nav-btn active">Home</button>
+      <button data-screen="projects-screen" class="nav-btn">Projects</button>
+      <button data-screen="skills-screen" class="nav-btn">Skills</button>
+      <button data-screen="contact-screen" class="nav-btn">Contact</button>
+    </nav>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html> 
