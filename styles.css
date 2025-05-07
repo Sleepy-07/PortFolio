@@ -1,26 +1,26 @@
 /* Material Design Variables */
 :root {
-  --primary: #1A73E8;
-  --primary-dark: #1557B0;
-  --accent: #00BFA5;
-  --bg: #FFFFFF;
-  --surface: #F5F5F5;
-  --text: #202124;
+  --primary: #1976d2;
+  --primary-dark: #1565c0;
+  --accent: #ff9800;
+  --bg: #f5f5f5;
+  --surface: #fff;
+  --text: #222;
   --shadow: 0 4px 16px rgba(0,0,0,0.12);
   --radius: 24px;
   --appbar-height: 56px;
-  --outer-bg: linear-gradient(135deg, #FFFFFF 0%, #F5F5F5 100%);
+  --outer-bg: linear-gradient(135deg, #f5f5f5 0%, #e0e0e0 100%);
   --outer-bg-pattern: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%239C92AC' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
 }
 [data-theme="dark"] {
-  --primary: #1A73E8;
-  --primary-dark: #1557B0;
-  --accent: #00BFA5;
+  --primary: #90caf9;
+  --primary-dark: #1976d2;
+  --accent: #ffb74d;
   --bg: #121212;
-  --surface: #1E1E1E;
-  --text: #E0E0E0;
+  --surface: #1e1e1e;
+  --text: #f5f5f5;
   --shadow: 0 4px 24px rgba(0,0,0,0.32);
-  --outer-bg: linear-gradient(135deg, #121212 0%, #1E1E1E 100%);
+  --outer-bg: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
   --outer-bg-pattern: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%239C92AC' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
 }
 
@@ -119,7 +119,28 @@ body::before {
   padding: 1.2em 1em 1em 1em;
   background: var(--bg);
   transition: background 0.4s;
+  scrollbar-width: thin;
+  scrollbar-color: var(--primary) var(--bg);
 }
+
+.app-content::-webkit-scrollbar {
+  width: 8px;
+}
+
+.app-content::-webkit-scrollbar-track {
+  background: var(--bg);
+  border-radius: 4px;
+}
+
+.app-content::-webkit-scrollbar-thumb {
+  background: var(--primary);
+  border-radius: 4px;
+}
+
+.app-content::-webkit-scrollbar-thumb:hover {
+  background: var(--primary-dark);
+}
+
 .screen {
   display: none;
   animation: fadeIn 0.6s;
@@ -156,12 +177,59 @@ body::before {
   min-height: 1.5em;
 }
 
+.home-content {
+  max-height: calc(100vh - var(--appbar-height) - 56px);
+  overflow-y: auto;
+  padding-right: 0.5em;
+  scrollbar-width: thin;
+  scrollbar-color: var(--primary) var(--bg);
+}
+
+.home-content::-webkit-scrollbar {
+  width: 8px;
+}
+
+.home-content::-webkit-scrollbar-track {
+  background: var(--bg);
+  border-radius: 4px;
+}
+
+.home-content::-webkit-scrollbar-thumb {
+  background: var(--primary);
+  border-radius: 4px;
+}
+
+.home-content::-webkit-scrollbar-thumb:hover {
+  background: var(--primary-dark);
+}
+
 /* Projects */
 .projects-list {
-  display: flex;
-  flex-direction: column;
-  gap: 1em;
+  max-height: calc(100vh - var(--appbar-height) - 56px);
+  overflow-y: auto;
+  padding-right: 0.5em;
+  scrollbar-width: thin;
+  scrollbar-color: var(--primary) var(--bg);
 }
+
+.projects-list::-webkit-scrollbar {
+  width: 8px;
+}
+
+.projects-list::-webkit-scrollbar-track {
+  background: var(--bg);
+  border-radius: 4px;
+}
+
+.projects-list::-webkit-scrollbar-thumb {
+  background: var(--primary);
+  border-radius: 4px;
+}
+
+.projects-list::-webkit-scrollbar-thumb:hover {
+  background: var(--primary-dark);
+}
+
 .project-card {
   background: var(--surface);
   border-radius: 16px;
@@ -259,19 +327,15 @@ body::before {
 
 /* Skills */
 .skills-grid {
-  display: flex;
-  flex-direction: column;
-  gap: 2em;
-  margin-top: 1em;
-  max-height: 70vh;
+  max-height: calc(100vh - var(--appbar-height) - 56px);
   overflow-y: auto;
-  padding-right: 1em;
-  scrollbar-width: none; /* Firefox */
-  -ms-overflow-style: none; /* IE and Edge */
+  padding-right: 0.5em;
+  scrollbar-width: thin;
+  scrollbar-color: var(--primary) var(--bg);
 }
 
 .skills-grid::-webkit-scrollbar {
-  display: none; /* Chrome, Safari, Opera */
+  width: 8px;
 }
 
 .skills-grid::-webkit-scrollbar-track {
@@ -387,18 +451,29 @@ body::before {
 }
 
 .contact-container {
-  background: var(--surface);
-  border-radius: 16px;
-  padding: 2em;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-  max-height: 70vh;
+  max-height: calc(100vh - var(--appbar-height) - 56px);
   overflow-y: auto;
-  scrollbar-width: none; /* Firefox */
-  -ms-overflow-style: none; /* IE and Edge */
+  padding-right: 0.5em;
+  scrollbar-width: thin;
+  scrollbar-color: var(--primary) var(--bg);
 }
 
 .contact-container::-webkit-scrollbar {
-  display: none; /* Chrome, Safari, Opera */
+  width: 8px;
+}
+
+.contact-container::-webkit-scrollbar-track {
+  background: var(--bg);
+  border-radius: 4px;
+}
+
+.contact-container::-webkit-scrollbar-thumb {
+  background: var(--primary);
+  border-radius: 4px;
+}
+
+.contact-container::-webkit-scrollbar-thumb:hover {
+  background: var(--primary-dark);
 }
 
 .contact-header {
@@ -711,81 +786,4 @@ body::before {
 
 .video-modal .close:hover {
   color: var(--accent);
-}
-
-/* Section Styles */
-section {
-  padding: 2rem;
-  margin: 1rem 0;
-  background: var(--surface);
-  border-radius: var(--radius);
-  box-shadow: var(--shadow);
-  max-height: calc(100vh - var(--appbar-height) - 4rem);
-  overflow-y: auto;
-  scrollbar-width: none; /* Firefox */
-  -ms-overflow-style: none; /* IE and Edge */
-}
-
-section::-webkit-scrollbar {
-  display: none; /* Chrome, Safari, Opera */
-}
-
-/* Contact Card Styles */
-.contact-card {
-  background: var(--surface);
-  border-radius: var(--radius);
-  padding: 1.5rem;
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  text-decoration: none;
-  color: var(--text);
-}
-
-.contact-card:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--shadow);
-  background: var(--primary);
-  color: white;
-}
-
-.contact-card:hover .contact-icon {
-  background: rgba(255, 255, 255, 0.2);
-  color: white;
-}
-
-.contact-card:hover .contact-text {
-  color: white;
-}
-
-.contact-icon {
-  width: 48px;
-  height: 48px;
-  border-radius: 12px;
-  background: var(--primary);
-  color: white;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.5rem;
-  transition: all 0.3s ease;
-}
-
-.contact-text {
-  flex: 1;
-  transition: all 0.3s ease;
-}
-
-.contact-text h3 {
-  margin: 0;
-  font-size: 1.1rem;
-  font-weight: 500;
-}
-
-.contact-text p {
-  margin: 0.25rem 0 0;
-  font-size: 0.9rem;
-  opacity: 0.8;
 } 

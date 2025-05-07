@@ -153,10 +153,10 @@ window.addEventListener('DOMContentLoaded', () => {
     card.innerHTML = `
   
       <div class="project-content">
-        <div class="project-title">${p.title}</div>
-        <div class="project-tech">${p.tech.map(t => `<span class='skill-chip'>${t}</span>`).join('')}</div>
-        <div>${p.desc}</div>
-        <div class="project-links">
+      <div class="project-title">${p.title}</div>
+      <div class="project-tech">${p.tech.map(t => `<span class='skill-chip'>${t}</span>`).join('')}</div>
+      <div>${p.desc}</div>
+      <div class="project-links">
           <button class="gallery-btn" onclick="event.stopPropagation()">View Gallery</button>
         </div>
       </div>
