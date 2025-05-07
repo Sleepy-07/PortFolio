@@ -266,12 +266,12 @@ body::before {
   max-height: 70vh;
   overflow-y: auto;
   padding-right: 1em;
-  scrollbar-width: thin;
-  scrollbar-color: var(--primary) var(--bg);
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
 }
 
 .skills-grid::-webkit-scrollbar {
-  width: 8px;
+  display: none; /* Chrome, Safari, Opera */
 }
 
 .skills-grid::-webkit-scrollbar-track {
@@ -391,6 +391,14 @@ body::before {
   border-radius: 16px;
   padding: 2em;
   box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  max-height: 70vh;
+  overflow-y: auto;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+}
+
+.contact-container::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
 }
 
 .contact-header {

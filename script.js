@@ -157,8 +157,6 @@ window.addEventListener('DOMContentLoaded', () => {
         <div class="project-tech">${p.tech.map(t => `<span class='skill-chip'>${t}</span>`).join('')}</div>
         <div>${p.desc}</div>
         <div class="project-links">
-          <a class="project-link" href="${p.github}" target="_blank">GitHub</a>
-          ${p.play ? `<a class="project-link" href="${p.play}" target="_blank">Play Store</a>` : ''}
           <button class="gallery-btn" onclick="event.stopPropagation()">View Gallery</button>
         </div>
       </div>
